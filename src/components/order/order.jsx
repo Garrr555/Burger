@@ -101,7 +101,7 @@ export default function Order() {
       </div>
 
       <div className="burger">
-        <div className="bg-[#D6C18B] p-7 my-3 w-[472px] mx-auto rounded-t-full"></div>
+        <div className="bg-[#D6C18B] p-10 my-3 w-[472px] mx-auto rounded-t-full"></div>
         <ul className="text-center">
           {gambarMenu.map((menu, index) => (
             <li key={index} className="flex justify-center my-2">
@@ -110,7 +110,7 @@ export default function Order() {
           ))}
         </ul>
 
-        <div className="bg-[#D6C18B] p-7 my-3 w-[472px] mx-auto rounded-b-full"></div>
+        <div className="bg-[#D6C18B] p-5 my-3 w-[472px] mx-auto rounded-b-full"></div>
       </div>
 
       <div className=" flex flex-wrap justify-center border rounded-xl w-[884px]  mx-auto gap-1 border-green-700 bg-green-50">
