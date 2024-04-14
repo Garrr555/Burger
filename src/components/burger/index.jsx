@@ -11,7 +11,7 @@ export default function Index() {
         <HomeBanner />
         <Routes>
           <Route path="/" element={<HomeListCTA />} />
-          <Route path="/order" element={<Order/>}/>
+          <Route path="/order" element={<Order />} />
           <Route path="/about" element={<About />} />
         </Routes>
       </main>

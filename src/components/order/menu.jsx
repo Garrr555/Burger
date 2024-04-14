@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-export default function Menu({ nama, harga, onClick, bg, jumlahKlik}) {
+export default function Menu({ nama, harga, onClick, bg, jumlahKlik, x }) {
   return (
     <div
       className="my-5 text-[32px] text-center mx-10 cursor-pointer px-2 rounded-xl hover:bg-green-400 hover:text-white transition duration-300"
@@ -7,7 +7,13 @@ export default function Menu({ nama, harga, onClick, bg, jumlahKlik}) {
     >
       <p>{nama}</p>
       <p>Rp.{harga}</p>
-      <p>{jumlahKlik}</p>
+      <div className="flex justify-center">
+        <p>
+          {jumlahKlik}
+          {x}
+        </p>
+        <p className={`${jumlahKlik > 0 ? "" : "hidden"}`}>x</p>
+      </div>
     </div>
   );
 }

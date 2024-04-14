@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Menu from "./menu";
 import Gambar from "./gambarBurger";
 
@@ -8,6 +8,7 @@ export default function Order() {
   const [totalHarga, setTotalHarga] = useState(0);
   const [gambarMenu, setGambarMenu] = useState([]);
   const [jumlahKlik, setjumlahKlik] = useState({});
+  const [x, setX] = useState("")
 
   const klik = (harga, bg, nama) => {
     if (gambarMenu.length >= 5) {
@@ -32,6 +33,12 @@ export default function Order() {
     setGambarMenu([]);
     setjumlahKlik({});
   };
+
+  useEffect(() => {
+    if(Object.keys(jumlahKlik).length > 0){
+      setX("X")
+    }
+  }, [jumlahKlik])
 
   const bahan = [
     {
@@ -80,15 +87,15 @@ export default function Order() {
           </p>
         </div>
         <div className="flex justify-center items-center mb-10 gap-5">
-          <button
-            className={`bg-[#D9D9D9] w-[122px] h-[46px] rounded-lg text-[14px] transition duration-300 ${
+          <div
+            className={`w-[122px] h-[46px] rounded-lg text-[14px] flex items-center justify-center transition duration-300 ${
               order
-                ? "bg-green-700 border border-green-700 text-white font-bold hover:opacity-80"
-                : "bg-slate-300"
+                ? "bg-green-700 border border-green-700 text-white font-bold hover:opacity-80 cursor-pointer"
+                : "bg-[#D9D9D9] cursor-default opacity-75"
             }`}
           >
             Order Burger
-          </button>
+          </div>
           <button
             className={` w-[122px] h-[46px] rounded-lg text-[14px] transition duration-300 bg-white border border-green-500 text-green-700 hover:bg-red-600 hover:border-none hover:text-white ${
               order ? "" : "hidden"
@@ -122,6 +129,7 @@ export default function Order() {
             bg={item?.bg}
             onClick={() => klik(item?.harga, item?.bg, item?.nama)}
             jumlahKlik={jumlahKlik[item?.nama]}
+            x={x[item?.nama]}
           />
         ))}
       </div>

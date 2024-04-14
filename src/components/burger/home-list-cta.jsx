@@ -9,7 +9,7 @@ const listCTA = [
         variant: "primary"
     },
     {
-        name: "About Us",
+        name: "AboutUs",
         link: "/about",
         variant: "secondary"
     },

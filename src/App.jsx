@@ -6,6 +6,7 @@ import Index from './components/burger'
 function App() {
   return (
     <>
+    <p>Halo</p>
       <Index/>
     </>
   )
